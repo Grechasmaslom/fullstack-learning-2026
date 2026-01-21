@@ -7,7 +7,7 @@
         <style>
             body{
                 font-family: Arial, sans-serif;
-                max-width: 800px;
+                max-width: 1200px;
                 margin: 0 auto;
                 padding: 20px;
                 background-color: #ffffff;
@@ -40,11 +40,12 @@
                 margin-bottom: 10px;
             }
             .card{
-                background-color: #a0a0a0;
-                padding: 15px;
+                background-color: #a1a1a1;
+                padding: 10px;
                 margin-bottom: 15px;
                 border-radius: 8px;
-                box-shadow: 0 0 5px rgba(0,0,0,0.1);
+                box-shadow:  0 0 5px rgba(0, 0, 0, 0.1);
+                <!-- flex: 1; /* Одинаковая ширина */ -->
             }
             .text-muted{
                 color: #ff0000;
@@ -58,7 +59,12 @@
             .skills-list {
                 list-style-type: square;
             }
-            
+            .cards-row{
+                display: flex; /*Включение Flexbox */
+                gap: 20px; /* Расстояние между карточками */
+                align-items: flex-start; /* Выровнять по верхнему краю */
+                justify-content: center;
+            }
         </style>
     </head>
     <body>
@@ -71,6 +77,7 @@
             <p>Доход~14$/час. Цель Fullstack разрабочик с доходом 50+ $/час.</p>
         </section>
 
+     <div class="cards-row">       
         <section class="card">
             <h2 class="section-title"> Skills </h2>
             <ul class="skills-list">
@@ -89,6 +96,7 @@
              <li>Foud a job abroad</li>
             </ol>
         </section>
+     </div>
 
         <h2>Contacts</h2>
         <ul>
