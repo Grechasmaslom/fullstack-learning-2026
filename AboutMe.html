@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="ru">
     <head>
-        <meta charset="UTF-8"
+        <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Игорь - будущий fullstack разрабочик</title>
         <style>
@@ -45,7 +45,8 @@
                 margin-bottom: 15px;
                 border-radius: 8px;
                 box-shadow:  0 0 5px rgba(0, 0, 0, 0.1);
-                <!-- flex: 1; /* Одинаковая ширина */ -->
+                flex: 1; /* Одинаковая ширина */
+
             }
             .text-muted{
                 color: #ff0000;
@@ -62,8 +63,34 @@
             .cards-row{
                 display: flex; /*Включение Flexbox */
                 gap: 20px; /* Расстояние между карточками */
-                align-items: flex-start; /* Выровнять по верхнему краю */
+                align-items: stretch; /* Выровнять по верхнему краю */
                 justify-content: center;
+            }
+            @media (max-width: 768px){ /* Адаптивность для мобильныхустройств */
+                body{
+                    padding: 10px;
+                    max-width: 100%; /* На телефон на всю ширину */
+                }
+                .cards-row {
+                    flex-direction: column; /*Карточки в столбик*/
+                    gap: 15px; /*Расстояние между карточками*/
+                }
+                .page-title{
+                    font-size: 24px; /*Меньше заголовок*/
+                }
+                .section-title{
+                    font-size: 20px;
+                }
+                .highlight-skill{
+                    font-size: 18px; /*Уменьшил большой зеленый текст*/
+                    padding-left: 20px;
+                }
+                h1, h2, h3{
+                    text-align: center;
+                }
+                ul, ol{
+                    padding-left: 15px;
+                }
             }
         </style>
     </head>
@@ -88,25 +115,44 @@
             </ul>
         </section>
 
-        <section class="card">
+        <section class="card"> 
             <h2 class="section-title">Планы</H2>
             <ol>
              <li>Study HTML/CSS/JS</li>
-             <li>Learn React + Node.JS </li>
+             <li>Learn React + Node.JS </li> 
              <li>Foud a job abroad</li>
             </ol>
         </section>
      </div>
 
+    
         <h2>Contacts</h2>
         <ul>
             <li>Tel:+7-999-999-99-99</li>
             <li>E-mail: Ro@yandex.ru</li>
         </ul>
-
         <h3>Pаботаю с 7 до 16 5/2</h3>
         <h3>Обучаюсь каждый день по 3 часа</h3>
-        
-    
+     
+    <script>
+        //Объявляем переменные
+        let name = "Igor";
+        let age = "32";
+        let curentHourlyRate = "14";
+        let targetHourlyRate = "50";
+        let hoursPerDay = 2;
+        let DaysPerMonth = 26;
+        let StudyHoursPerMonth = DaysPerMonth * hoursPerDay; 
+
+        //Считаем разницу
+        let difference = targetHourlyRate - curentHourlyRate;
+
+        //Выводим в консоль
+        console.log("Имя:",name);
+        console.log("Возраст:",age);
+        console.log('Текущая ставка:', curentHourlyRate);
+        console.log('Нужно увеличить доход на:', difference, 'долларов в час');
+        console.log('Чавсов обучения в месяц:', StudyHoursPerMonth);
+    </script>
     </body>
 </html>
